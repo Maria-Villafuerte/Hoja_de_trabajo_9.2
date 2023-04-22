@@ -1,3 +1,12 @@
+/**
+ *
+ */
+package edu.uvg.ht9;
+
+/**
+ * @author MAAG
+ *
+ */
 public interface Map<T> {
 
     public void add (T value);

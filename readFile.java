@@ -1,3 +1,4 @@
+import java.awt.image.renderable.ParameterBlock;
 import java.io.File; // Import the File class
 import java.io.FileNotFoundException; // Import this class to handle errors
 import java.util.ArrayList;
@@ -19,8 +20,10 @@ public class readFile {
   static ArrayList<String> total = new ArrayList<>();
   static ArrayList<String> Espanol_Temp = new ArrayList<>();
   static ArrayList<String> Ingles_Temp = new ArrayList<>();
-  static ArrayList<String> Frances_Temp = new ArrayList<>();
+  static ArrayList<String> Tipo_Palabra_Temp = new ArrayList<>();
   static ArrayList<String> oracion = new ArrayList<>();
+
+  static ArrayList<Palabra> palabras_temp = new ArrayList<>();
 
 
   /**
@@ -47,7 +50,7 @@ public class readFile {
         for (String string : partes) {
           pila.push(string);
         }
-        Frances_Temp.add(pila.pop());
+        Tipo_Palabra_Temp.add(pila.pop());
         Espanol_Temp.add(pila.pop());
         Ingles_Temp.add(pila.pop());
       }
@@ -118,5 +121,14 @@ public class readFile {
       }
     }
     return subcadenas;
+  }
+
+  public static void crear_palabras (){
+    for (String a: Espanol_Temp ) {
+      for (String b: Ingles_Temp) {
+        Palabra pal_temp = new Palabra(a,b);
+        palabras_temp.add(pal_temp);
+      }
+    }
   }
 }
