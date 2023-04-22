@@ -2,7 +2,7 @@ package Tests;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-public class AVLTreeTest {
+public class TestAVLTree {
 
     @Test
     public void testInsert() {
