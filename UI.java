@@ -3,17 +3,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
+
 public class UI {
     static readFile read = new readFile();
     static Scanner sc = new Scanner(System.in);
-
     Association RBT = Diccionario_Factory.crearArbol(1);
     Association gato = Diccionario_Factory.crearArbol(2);
     static ArrayList<String> total = new ArrayList<>();
     static ArrayList<String> oracion_temp = read._readfile2("src\\Archivo_de_Oración_a_traducir.txt");
+    static Palabra par_tem = new Palabra("a", "s");
+    
 
 
+    
     public static void main(String[] args) {
+        System.out.println(par_tem);
+        /*
         oracion_temp=read.split(oracion_temp, " ");
         System.out.println("\n¡Bienvenidos a un diccionario inglés - español!");
         //System.out.println("En este momento se leera el archivo de código...");
@@ -47,13 +52,10 @@ public class UI {
                     System.out.println("Opción no válida. Intente de nuevo.");
                     break;
             }
+             
     }
-
+*/
 }
 }
 
-//C:\\Users\\villa\\Desktop\\Clases_S3\\Algoritmos\\Hoja-de-trabajo-7-MJV\\src\\Archivo_de_Oración_a_traducir.txt
-//Archivo_de_Palabras.txt
-//C:\Users\villa\Desktop\Clases_S3\Algoritmos\Hoja-de-trabajo-7-MJV\src\Archivo_de_Oración_a_traducir.txt
-//C:\\Users\\villa\\Desktop\\Clases_S3\\Algoritmos\\Hoja-de-trabajo-7-MJV\\src\\Archivo_de_Palabras.txt
-//C:\\Users\\villa\\Desktop\\Clases_S3\\Algoritmos\\Hoja-de-trabajo-7-MJV\\Archivo_de_Oración_a_traducir
+
