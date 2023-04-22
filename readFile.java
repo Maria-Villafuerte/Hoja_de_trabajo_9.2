@@ -122,12 +122,13 @@ public class readFile {
     return subcadenas;
   }
 
-  public void crear_palabras (ArrayList<Palabra> palabras_temp ){
+  public ArrayList<Palabra> crear_palabras (ArrayList<Palabra> palabras_temp ){
     for (String a: Espanol_Temp ) {
       for (String b: Ingles_Temp) {
         Palabra pal_temp = new Palabra(a,b);
         palabras_temp.add(pal_temp);
       }
     }
+    return palabras_temp;
   }
 }

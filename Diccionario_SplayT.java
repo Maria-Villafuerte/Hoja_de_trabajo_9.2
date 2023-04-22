@@ -1,15 +1,15 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Diccionario_SplayT implements Association{
+public class Diccionario_SplayT implements Association {
     SplayT<Palabra> arbol = new SplayT<Palabra>();
     readFile read = new readFile();
-    ArrayList<String> Espanol_Temp_en_cont = read.Espanol_Temp;
-    ArrayList<String> Ingles_Temp_en_cont  = read.Ingles_Temp;
-    ArrayList<String> Tipo_Palabra_Temp_en_cont = read.Tipo_Palabra_Temp;
+
     @Override
-    public void Guardar_en_arbol() {
-       // arbol.add();
+    public void Guardar_en_arbol(ArrayList<Palabra> palabras_temp) {
+        for (Palabra a : palabras_temp) {
+            arbol.add(a);
+        }
     }
 
     @Override
@@ -17,8 +17,31 @@ public class Diccionario_SplayT implements Association{
 
     }
 
-    @Override
-    public void Traducir_oración() {
+    ArrayList<String> Oracion_traducida = new ArrayList<>();
 
+    @Override
+    public void Traducir_oración(ArrayList<String> a) {
+        Oracion_traducida.clear();
+        for (String Palabra : a) {
+            Palabra = Palabra.toLowerCase();
+            //Que la palabra si este en el diccionario
+            String palabra_a_buscar = Palabra;
+            Palabra pa_temp = new Palabra(palabra_a_buscar, null);
+            Palabra vv = arbol.get(pa_temp);
+            Palabra traduccion_de_palabra = null;
+            if (vv != null) {
+                traduccion_de_palabra = arbol.get(pa_temp);
+            } else if (Palabra.equals(".")) {
+                traduccion_de_palabra = new Palabra("*", "*");
+            }
+            String traduc = traduccion_de_palabra.getSpanish();
+            Oracion_traducida.add(traduc);
+            //Que la palabra no este en el diccionario
+        }
+        //palabra.toLowerCase()
+        System.out.println("\nOración traducida:");
+        for (int i = 0; i < Oracion_traducida.size(); i++) {
+            System.out.print(Oracion_traducida.get(i) + " ");
+        }
     }
 }
