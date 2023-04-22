@@ -26,7 +26,10 @@ public class Diccionario {
     };
 
     //Creación de los tres árboles para el diccionario
-    BinarySearchTree<Integer, String> total = new BinarySearchTree<>(intComparator, getKeyFunc);
+    ArbolRojoNegro a = new ArbolRojoNegro();
+    ArbolRojoNegro<String> RBT = new ArbolRojoNegro<String>();
+
+    ArbolRojoNegro<Integer, String> total = new BinarySearchTree<>(intComparator, getKeyFunc);
     BinarySearchTree<Integer, String> Arbol_Epañol = new BinarySearchTree<>(intComparator, getKeyFunc);
     BinarySearchTree<Integer, String> Arbol_Ingles = new BinarySearchTree<>(intComparator, getKeyFunc);
     BinarySearchTree<Integer, String> Arbol_Frances = new BinarySearchTree<>(intComparator, getKeyFunc);
