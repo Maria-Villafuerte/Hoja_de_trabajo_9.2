@@ -31,7 +31,9 @@ public class UI {
             switch (opcion_de_menu) {
                 case 1:
                     //Palabras
-                    System.out.println(read.palabras_temp);
+                    ArrayList<Palabra> aa  = new ArrayList<>();
+                    read.crear_palabras(aa);
+                    System.out.println();
                     break;
                 case 2:
                     //1. Español 2.ingles 3. Frances

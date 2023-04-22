@@ -23,7 +23,6 @@ public class readFile {
   static ArrayList<String> Tipo_Palabra_Temp = new ArrayList<>();
   static ArrayList<String> oracion = new ArrayList<>();
 
-  static ArrayList<Palabra> palabras_temp = new ArrayList<>();
 
 
   /**
@@ -123,7 +122,7 @@ public class readFile {
     return subcadenas;
   }
 
-  public static void crear_palabras (){
+  public void crear_palabras (ArrayList<Palabra> palabras_temp ){
     for (String a: Espanol_Temp ) {
       for (String b: Ingles_Temp) {
         Palabra pal_temp = new Palabra(a,b);
